@@ -1,0 +1,148 @@
+/* /Components/CsvConverter/CsvLoader.razor.rz.scp.css */
+.fileLoaderContainer[b-5fhuwsrgho]{
+    width: 100%;
+    display: flex;
+    margin: 2rem 0;
+}
+
+.fileLoader[b-5fhuwsrgho]{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.fileLoader-instruction-text[b-5fhuwsrgho]{
+    width: 100%;
+}
+.inputFile[b-5fhuwsrgho]{
+    width: 70%;
+}
+#processButton[b-5fhuwsrgho]{
+    margin-left: auto;
+    width: 30%;
+}
+.textError[b-5fhuwsrgho]{
+    margin: .3rem auto;
+    width: 100%;
+}
+
+.successChip[b-5fhuwsrgho]{
+    background-color: var(--secondary);
+    display: inline-block;
+    margin: 0.5rem auto 0.5rem auto;
+    padding: .3rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid var(--secondary-strong);
+}
+.successChip > p[b-5fhuwsrgho]{
+    text-align: center;
+    font-size: .8rem;
+    color: white;
+    margin: 0;
+}
+/* /Components/CsvConverter/CsvReport.razor.rz.scp.css */
+.report-container[b-gdmt2r7qs9]{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.report-section[b-gdmt2r7qs9]{
+    background-color: white;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 1rem 2rem;
+}
+
+.resumen[b-gdmt2r7qs9]{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.report-spotlight-section[b-gdmt2r7qs9]{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sectionDivider[b-gdmt2r7qs9]{
+    display: flex;
+    flex-direction: row;
+}
+.sectionDivider > div[b-gdmt2r7qs9]{
+    width: 50%;
+    margin: 1rem 2rem;
+}
+.sectionDivider > div > small[b-gdmt2r7qs9]{
+    display: block;
+    width: 100%;
+    text-align: left;
+    min-width: max-content;
+}
+.sectionDivider > div > p.spotlight[b-gdmt2r7qs9]{
+    display: block;
+    text-align: left;
+    font-size: 1.5rem;
+    color: var(--secondary-strong);
+    font-weight: bold;
+    min-width: max-content;
+}
+h2[b-gdmt2r7qs9]{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#orderDetail[b-gdmt2r7qs9]{
+    width: 60%;
+    max-height: 900px;
+    display: flex;
+    flex-direction: column;
+}
+#orderDetail > h2[b-gdmt2r7qs9]{
+    margin: 1rem 0 2rem 0;
+}
+
+#fullOrderDetail[b-gdmt2r7qs9]{
+    width: 30%;
+}
+
+
+#orderNumber[b-gdmt2r7qs9]{
+    
+}
+#orderNumber > p[b-gdmt2r7qs9]{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+#orderNumber > p.spotlight[b-gdmt2r7qs9]{
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--secondary-strong);
+    text-align: center;
+    width: min-content;
+    line-height: 2.8rem;
+}
+/* /Layout/MainLayout.razor.rz.scp.css */
+/* /Layout/NavMenu.razor.rz.scp.css */
+/* /Pages/Tools/CsvConverter.razor.rz.scp.css */
+.csv-converter-presentation[b-su1101r42u]{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 2rem;
+}
+
+.csv-converter-presentation > h1[b-su1101r42u] {
+    font-weight: bold;
+    display: inline-block;
+    margin: auto;
+}
+
+.csv-converter-presentation > p[b-su1101r42u] {
+    margin: 1rem auto;
+    text-align: center;
+}
