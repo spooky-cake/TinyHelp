@@ -12,6 +12,7 @@ jobs:
   deploy:
     permissions:
       contents: write
+      packages: read    
     runs-on: ubuntu-latest
     steps:
       # Checkout the code
