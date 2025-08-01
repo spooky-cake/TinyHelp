@@ -23,6 +23,16 @@ jobs:
         with:
           dotnet-version: 9.0.x
 
+      - name: Restore dependencies
+        run: dotnet restore
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+
+      - name: Build
+        run: dotnet build --no-restore
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
         # Publish the site
       - name: Publish
         run: dotnet publish ./TinyHelp/TinyHelp.csproj -c:Release -o:publish -p:GHPages=true
