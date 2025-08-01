@@ -1,0 +1,141 @@
+@using TinyHelp.Components.CsvConverter.DataTransferObjects
+<div class="flex-row">
+    <div class="report-container">
+        <div class="resumen report-section">
+            <div id="orderNumber" class="report-spotlight-section">
+                <p>Order Total Count</p>
+                <p class="spotlight">@Orders.Count Items</p>
+            </div>
+            <div class="dividerLine"></div>
+            <div id="totalAmount" class="report-spotlight-section">
+                <h2>Total Amount</h2>
+                <div class="sectionDivider">
+                    <div class="totalAmountSection">
+                        <small>Without Shipping</small>
+                        <p class="spotlight">
+                            $@Orders.Sum(x => x.ItemTotal) @_currencyCode
+                        </p>
+                    </div>
+                    <div class="totalAmountSection">
+                        <small>With Shipping</small>
+                        <p class="spotlight">
+                            $@Orders.Sum(x => x.TotalPrice) @_currencyCode
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="orderDetail" class="report-section">
+            <h2>Order Item Detail</h2>
+            <MudTable T="OrderDetailDto" Style="max-width: 100%;" Height="600px" Items="_orderDetails" Dense="true" Bordered="true"
+                      HorizontalScrollbar="true" FixedHeader="true" Hover="true"
+                      Filter="@(new Func<OrderDetailDto, bool>(FilterFunc1))"
+                      RowClass="cursor-pointer" OnRowClick="RowClickEventDetail"
+
+                      Loading="_isLoading" Virtualize="true" LoadingProgressColor="Color.Primary">
+                <ToolBarContent>
+                    <MudText Typo="Typo.h6">Order Details</MudText>
+                    <MudSpacer/>
+                    <MudTextField Margin="Margin.Dense" @bind-value="_detailSearchString" Adornment="Adornment.Start"
+                                  AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Small"/>
+                </ToolBarContent>
+                <HeaderContent>
+                    <MudTh>Order Date</MudTh>
+                    <MudTh>Order Number</MudTh>
+                    @* <MudTh>Transaction Id</MudTh> *@
+                    <MudTh>Buyer Name</MudTh>
+                    @* <MudTh>Email</MudTh> *@
+                    <MudTh>Shipment Status</MudTh>
+                    <MudTh>Country</MudTh>
+                    @* <MudTh>City</MudTh> *@
+                    @* <MudTh>State</MudTh> *@
+                    @* <MudTh>Zip Code</MudTh> *@
+                    @* <MudTh>Address</MudTh> *@
+                    <MudTh>Product Name</MudTh>
+                    <MudTh>Product Option</MudTh>
+                    <MudTh>Quantity</MudTh>
+                    <MudTh>Unit Price</MudTh>
+                    <MudTh>Total</MudTh>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd DataLabel="Order Date">@context.OrderDate</MudTd>
+                    <MudTd DataLabel="Order Number">@context.OrderNumber</MudTd>
+                    @* <MudTd DataLabel="Transaction Id">@context.TransactionId</MudTd> *@
+                    <MudTd DataLabel="Buyer Name">@($"{context.Buyer.FirstName} {context.Buyer.LastName}")</MudTd>
+                    @* <MudTd DataLabel="Email">@context.Buyer.Email</MudTd> *@
+                    <MudTd DataLabel="Shipment Status">@context.Shippment.ShipmentStatus</MudTd>
+                    <MudTd DataLabel="City">@context.Shippment.ShippingCountry.Value</MudTd>
+                    @* <MudTd DataLabel="City">@context.Shippment.ShippingCity.Value</MudTd> *@
+                    @* <MudTd DataLabel="State">@context.Shippment.ShippingState.Value</MudTd> *@
+                    @* <MudTd DataLabel="Zip Code">@context.Shippment.ShippingZipCode.Value</MudTd> *@
+                    @* <MudTd DataLabel="Address">@context.Shippment.ShippingAddress.Value</MudTd> *@
+                    <MudTd DataLabel="Product Name">@context.OrderLineItem.ProductName</MudTd>
+                    <MudTd DataLabel="Product Option">@context.OrderLineItem.ProductOptionName</MudTd>
+                    <MudTd DataLabel="Quantity">@context.OrderLineItem.Quantity</MudTd>
+                    <MudTd DataLabel="Unit Price">@context.OrderLineItem.UnitPrice</MudTd>
+                    <MudTd DataLabel="Total">@context.OrderLineItem.Total</MudTd>
+                </RowTemplate>
+            </MudTable>
+        </div>
+        <div id="fullOrderDetail" class="report-section">
+            <h2 class="my-2">Selected Order</h2>
+            @if (_selectedOrder is not null)
+            {
+                <p>
+                    <span
+                        class="strong">Client:</span>@(_selectedOrder.Buyer.FirstName + " " + _selectedOrder.Buyer?.LastName)
+                </p>
+                <p><span class="strong">Order Number: </span>@_selectedOrder.OrderNumber</p>
+                <p><span class="strong">Transaction Id: </span>@_selectedOrder.TransactionId</p>
+                <p><span class="strong">Email: </span>@_selectedOrder.Buyer?.Email</p>
+                <p><span class="strong">Country: </span>@_selectedOrder.Shipment.ShippingCountry.Value</p>
+                <p><span class="strong">Address: </span>
+                    @_selectedOrder.Shipment.ShippingAddress.Value,
+                    @_selectedOrder.Shipment.ShippingState.Value @_selectedOrder.Shipment.ShippingCity.Value
+                    @_selectedOrder.Shipment.ShippingZipCode.Value
+                </p>
+                <p><span class="strong">Item Count: </span>@_selectedOrder.ItemCount</p>
+                <p><span class="strong">Item Total: Revenue:</span>@_selectedOrder.ItemTotal</p>
+                <p><span class="strong">Total: </span>@_selectedOrder.TotalPrice</p>
+                <div class="orderDetailItemsTableContainer">
+                    <MudSimpleTable Hover="true" Dense="true" FixedHeader="true" Class="my-4" Style="height: 400px;">
+                        <thead>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col style="width: 50px">
+                            <col>
+                            <col>
+                        </colgroup>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Option</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in _selectedOrder.OrderLineItems)
+                        {
+                            <tr>
+                                <td>@item.ProductName</td>
+                                <td>@item.ProductOptionName</td>
+                                <td>@item.Quantity</td>
+                                <td>@item.UnitPrice</td>
+                                <td>@item.Total</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </MudSimpleTable>
+                </div>
+            }
+        </div>
+        <div id="totalPerArticle">
+
+        </div>
+        <div id="totalPerCountry">
+
+        </div>
+    </div>
+</div>

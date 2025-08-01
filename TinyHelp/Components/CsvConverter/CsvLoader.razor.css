@@ -1,0 +1,41 @@
+.fileLoaderContainer{
+    width: 100%;
+    display: flex;
+    margin: 2rem 0;
+}
+
+.fileLoader{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.fileLoader-instruction-text{
+    width: 100%;
+}
+.inputFile{
+    width: 70%;
+}
+#processButton{
+    margin-left: auto;
+    width: 30%;
+}
+.textError{
+    margin: .3rem auto;
+    width: 100%;
+}
+
+.successChip{
+    background-color: var(--secondary);
+    display: inline-block;
+    margin: 0.5rem auto 0.5rem auto;
+    padding: .3rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid var(--secondary-strong);
+}
+.successChip > p{
+    text-align: center;
+    font-size: .8rem;
+    color: white;
+    margin: 0;
+}

@@ -1,0 +1,80 @@
+.flex-row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.flex-col-12{
+    width: 100%;
+}
+.flex-col-10{
+    width: 83.3%;
+}
+.flex-col-8{
+    width: 66.4%;
+}
+.flex-col-6{
+    width: 50%;
+}
+.flex-col-4{
+    width: 33.2%;
+}
+.flex-col-2{
+    width: 16.6%;
+}
+
+.card{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid lightgray;
+}
+
+.mainBtn{
+    background-color: var(--secondary);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background-color 0.4s ease-out;
+}
+
+.mainBtn:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.mainBtn:disabled:hover{    
+    background-color: var(--secondary);
+
+}
+
+.mainBtn:hover{
+    background-color: var(--secondary-strong);
+}
+
+input::file-selector-button{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid lightgray;
+    transition: background-color 0.4s ease-out;
+    
+}
+
+.strong{
+    font-weight: bold;
+}
+
+input::file-selector-button:hover{
+    background-color: var(--secondary-strong);
+    color: white;
+    cursor: pointer;
+}
+
+div.dividerLine{
+    height: 100%;
+    border-left: 1px solid var(--primary-strong);
+}

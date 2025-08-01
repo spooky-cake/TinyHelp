@@ -1,0 +1,16 @@
+.csv-converter-presentation{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 2rem;
+}
+
+.csv-converter-presentation > h1 {
+    font-weight: bold;
+    display: inline-block;
+    margin: auto;
+}
+
+.csv-converter-presentation > p {
+    margin: 1rem auto;
+    text-align: center;
+}

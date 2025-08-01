@@ -1,0 +1,26 @@
+<div class="fileLoaderContainer">
+    <div class="fileLoader card">
+        <p class="fileLoader-instruction-text">Select your .csv file to upload</p>
+        <div class="inputFile">
+            <InputFile class="inputFile" OnChange="LoadFiles"></InputFile>
+        </div>
+        <button id="processButton"
+                @onclick="ProcessFile"
+                disabled="@(_file is null)"
+                class="mainBtn">Process File</button>
+        @if (_isLoading)
+        {
+            <MudProgressLinear Class="my-4" Color="Color.Primary" Indeterminate="true"/>
+        }
+        <p class="textError">
+            @_error
+        </p>
+        @if (_orderLoaded)
+        {
+            <div class="successChip">
+                <p>File Processed Succesfully</p>
+            </div>
+        }
+        
+    </div>
+</div>

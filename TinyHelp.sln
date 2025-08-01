@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyHelp", "TinyHelp\TinyHelp.csproj", "{3018B642-29F1-4192-8C97-65BC0D2B1DC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyHelp.Domain", "TinyHelp.Domain\TinyHelp.Domain.csproj", "{52250F24-9376-4F49-A100-0C4ECFFDF690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyHelp.Application", "TinyHelp.Application\TinyHelp.Application.csproj", "{4421D629-67E5-49C3-8521-E16DAEB670F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3018B642-29F1-4192-8C97-65BC0D2B1DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3018B642-29F1-4192-8C97-65BC0D2B1DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3018B642-29F1-4192-8C97-65BC0D2B1DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3018B642-29F1-4192-8C97-65BC0D2B1DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52250F24-9376-4F49-A100-0C4ECFFDF690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52250F24-9376-4F49-A100-0C4ECFFDF690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52250F24-9376-4F49-A100-0C4ECFFDF690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52250F24-9376-4F49-A100-0C4ECFFDF690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4421D629-67E5-49C3-8521-E16DAEB670F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4421D629-67E5-49C3-8521-E16DAEB670F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4421D629-67E5-49C3-8521-E16DAEB670F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4421D629-67E5-49C3-8521-E16DAEB670F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

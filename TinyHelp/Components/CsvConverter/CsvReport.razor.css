@@ -1,0 +1,86 @@
+.report-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.report-section{
+    background-color: white;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 1rem 2rem;
+}
+
+.resumen{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.report-spotlight-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sectionDivider{
+    display: flex;
+    flex-direction: row;
+}
+.sectionDivider > div{
+    width: 50%;
+    margin: 1rem 2rem;
+}
+.sectionDivider > div > small{
+    display: block;
+    width: 100%;
+    text-align: left;
+    min-width: max-content;
+}
+.sectionDivider > div > p.spotlight{
+    display: block;
+    text-align: left;
+    font-size: 1.5rem;
+    color: var(--secondary-strong);
+    font-weight: bold;
+    min-width: max-content;
+}
+h2{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#orderDetail{
+    width: 60%;
+    max-height: 900px;
+    display: flex;
+    flex-direction: column;
+}
+#orderDetail > h2{
+    margin: 1rem 0 2rem 0;
+}
+
+#fullOrderDetail{
+    width: 30%;
+}
+
+
+#orderNumber{
+    
+}
+#orderNumber > p{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+#orderNumber > p.spotlight{
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--secondary-strong);
+    text-align: center;
+    width: min-content;
+    line-height: 2.8rem;
+}

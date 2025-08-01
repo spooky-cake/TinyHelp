@@ -1,0 +1,26 @@
+@page "/tools/converter"
+@using TinyHelp.Components.CsvConverter
+
+
+<div class="flex-row">
+    <div class="flex-col-12">
+        <div class="csv-converter-presentation">
+            <h1>
+                Big Cartel CSV Converter Tool
+            </h1>
+            <p>
+                This tool helps converting CSV from Big cartel to a more readable format.
+            </p>
+        </div>
+    </div>
+    @if (!_isProcessed)
+    {
+        <div class="flex-col-12">
+            <CsvLoader OnFileProcessed="SetOrders"/>
+        </div>
+    }
+</div>
+@if (_isProcessed)
+{
+    <CsvReport Orders="_orders"/>
+}

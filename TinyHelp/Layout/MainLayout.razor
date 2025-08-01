@@ -1,0 +1,47 @@
+﻿@using TinyHelp.Themes
+@inherits LayoutComponentBase
+<div class="page">
+    @if (!_navVisible)
+    {
+        <div class="xButton toggleSidebarButton">
+            <button @onclick="ToggleNavBar">
+                x
+            </button>
+        </div>
+    }
+    <div class="sidebar @(!_navVisible ? "hideSidebar" : "")">
+        <div class="xButton">
+            <button @onclick="ToggleNavBar">
+                x
+            </button>
+        </div>
+        <NavMenu/>
+    </div>
+
+    <main class="content-main">
+        <article class="content flexContainer">
+            @Body
+        </article>
+    </main>
+</div>
+
+@* Required *@
+<MudThemeProvider Theme="MainTheme.Get()"/>
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+<MudDialogProvider />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider />
+
+@code{
+
+    private bool _navVisible = true;
+    
+    void ToggleNavBar()
+    {
+        _navVisible = !_navVisible;
+    }
+
+}
